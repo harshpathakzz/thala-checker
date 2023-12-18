@@ -4,7 +4,7 @@ const Footer = () => {
       Made with 💛 by{" "}
       <a
         className="underline"
-        href="https://github.com/harshpathakzz"
+        href="https://peerlist.io/harshpathakzz"
         target="_blank"
         rel="noopener noreferrer"
       >
