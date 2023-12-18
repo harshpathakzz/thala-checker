@@ -1,8 +1,6 @@
 import { useParams } from "react-router-dom";
 import CryptoJS from "crypto-js";
 import ShareButtons from "./ShareButtons";
-import VideoBG from "../public/MSD.mp4";
-
 const MessagePage = () => {
   const { name } = useParams();
   const decodedName = decodeURIComponent(name);
@@ -15,7 +13,7 @@ const MessagePage = () => {
     <div className="min-h-screen relative">
       <video
         className="absolute top-0 left-0 object-cover w-full h-full"
-        src={VideoBG}
+        src="https://firebasestorage.googleapis.com/v0/b/link-sync-64286.appspot.com/o/video%2FMSD.mp4?alt=media&token=668ef190-09aa-431c-b521-9df79e324e3f"
         autoPlay
         loop
       ></video>
