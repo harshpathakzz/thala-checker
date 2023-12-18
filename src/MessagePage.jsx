@@ -39,10 +39,7 @@ const MessagePage = () => {
           )}
 
           <div className="mt-6 flex flex-row justify-evenly">
-            <ShareButtons
-              shareUrl={`thala-checker.vercel.app
-/${name}`}
-            />
+            <ShareButtons shareUrl={`thala-checker.vercel.app/${name}`} />
           </div>
 
           <h1 className="text-4xl font-extrabold mt-8">THALA FOR A REASON</h1>
