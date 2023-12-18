@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 import CryptoJS from "crypto-js";
 import { useNavigate } from "react-router-dom";
-import msImage from "../public/ms.png"; // Update the path accordingly
 
 function Home() {
   const [inputValue, setInputValue] = useState("");
@@ -71,7 +70,11 @@ function Home() {
             </button>
           </div>
         )}
-        <img src={msImage} alt="MS Dhoni" className="mb-4 w-full" />
+        <img
+          src="https://i.postimg.cc/RF42Lwmc/ms.png"
+          alt="MS Dhoni"
+          className="mb-4 w-full"
+        />
         <input
           className="mt-1 p-2 w-full border rounded-md text-gray-800"
           placeholder="MSDhoni"
