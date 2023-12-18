@@ -24,7 +24,7 @@ function Home() {
     const trimmedInput = inputValue.replace(/\s/g, "");
 
     // Encrypt using AES
-    if (trimmedInput.length === 0) return alert("Please enter valid input");
+    if (trimmedInput.length === 0) return alert("Try Again");
 
     const isThalla = trimmedInput.length === 7;
     const isNumericInputWithSum7 =
@@ -35,7 +35,7 @@ function Home() {
         .reduce((sum, digit) => sum + parseInt(digit, 10), 0) === 7;
 
     if (!isThalla && !isNumericInputWithSum7) {
-      return alert("Invalid input");
+      return alert("Try Again");
     }
 
     const encrypted = CryptoJS.AES.encrypt(
