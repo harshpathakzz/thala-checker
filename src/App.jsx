@@ -1,6 +1,7 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import MessagePage from "./MessagePage";
 import Home from "./Home";
+import Footer from "./Footer";
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
           <Route path="/:name" element={<MessagePage />} />
         </Routes>
       </Router>
+      <Footer />
     </>
   );
 }
