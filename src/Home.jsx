@@ -41,21 +41,19 @@ function Home() {
           THALA CHECKER
         </h1>
 
-        <label className="block text-yellow-200">
-          Enter your name:
-          <input
-            className="mt-1 p-2 w-full border rounded-md"
-            type="text"
-            value={inputValue}
-            onChange={(e) => setInputValue(e.target.value)}
-          />
-        </label>
+        <input
+          className="mt-1 p-2 w-full border rounded-md text-black-700"
+          placeholder="MSDhoni"
+          type="text"
+          value={inputValue}
+          onChange={(e) => setInputValue(e.target.value)}
+        />
 
         <button
           className="mt-4 bg-yellow-500 text-blue-800 p-2 rounded-md hover:bg-yellow-600"
           onClick={handleSubmit}
         >
-          Generate Link
+          Check
         </button>
 
         {generatedLink && (
