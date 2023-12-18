@@ -35,21 +35,38 @@ function Home() {
   };
 
   return (
-    <div>
-      <h1>Generate Personalized Link</h1>
+    <div className="min-h-screen flex items-center justify-center bg-yellow-200">
+      <div className="max-w-md w-full p-6 bg-blue-800 rounded-md shadow-md">
+        <h1 className="text-3xl font-semibold text-yellow-200 mb-6">
+          THALA CHECKER
+        </h1>
 
-      <label>
-        Enter your name:
-        <input
-          type="text"
-          value={inputValue}
-          onChange={(e) => setInputValue(e.target.value)}
-        />
-      </label>
+        <label className="block text-yellow-200">
+          Enter your name:
+          <input
+            className="mt-1 p-2 w-full border rounded-md"
+            type="text"
+            value={inputValue}
+            onChange={(e) => setInputValue(e.target.value)}
+          />
+        </label>
 
-      <button onClick={handleSubmit}>Generate Link</button>
+        <button
+          className="mt-4 bg-yellow-500 text-blue-800 p-2 rounded-md hover:bg-yellow-600"
+          onClick={handleSubmit}
+        >
+          Generate Link
+        </button>
 
-      {generatedLink && <a href={generatedLink}>Click to see message</a>}
+        {generatedLink && (
+          <a
+            className="block mt-4 text-yellow-500 hover:underline"
+            href={generatedLink}
+          >
+            Click to see message
+          </a>
+        )}
+      </div>
     </div>
   );
 }
