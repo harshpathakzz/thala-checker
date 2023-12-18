@@ -2,6 +2,8 @@ import { useState } from "react";
 import CryptoJS from "crypto-js";
 import { useNavigate } from "react-router-dom";
 
+import msImage from "../public/ms.png"; // Update the path accordingly
+
 function Home() {
   const [inputValue, setInputValue] = useState("");
   const [generatedLink, setGeneratedLink] = useState("");
@@ -38,30 +40,32 @@ function Home() {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-yellow-200">
-      <div className="max-w-md w-full p-6 bg-blue-800 rounded-md shadow-md">
-        <h1 className="text-3xl font-semibold text-yellow-200 mb-6">
+    <div className="min-h-screen flex items-center justify-center bg-blue-800">
+      <div className="max-w-md w-full p-6 bg-yellow-500 rounded-md shadow-md">
+        <h1 className="text-3xl font-semibold text-blue-900 mb-6">
           THALA CHECKER
         </h1>
-
+        <img
+          src="https://i.postimg.cc/RF42Lwmc/ms.png"
+          alt="MS Dhoni"
+          className="mb-4 w-full"
+        />
         <input
-          className="mt-1 p-2 w-full border rounded-md text-black-700"
+          className="mt-1 p-2 w-full border rounded-md text-gray-800"
           placeholder="MSDhoni"
           type="text"
           value={inputValue}
           onChange={(e) => setInputValue(e.target.value)}
         />
-
         <button
-          className="mt-4 bg-yellow-500 text-blue-800 p-2 rounded-md hover:bg-yellow-600"
+          className="mt-4 bg-blue-800 text-yellow-500 p-2 rounded-md hover:bg-blue-1000"
           onClick={handleSubmit}
         >
           Check
         </button>
-
         {generatedLink && (
           <a
-            className="block mt-4 text-yellow-500 hover:underline"
+            className="block mt-4 text-purple-900 hover:underline"
             href={generatedLink}
           >
             Click to see message
