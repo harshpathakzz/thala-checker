@@ -10,14 +10,26 @@ function Home() {
   const handleSubmit = () => {
     // Encrypt using AES
     if (inputValue.length === 0) return alert("Please enter your name");
-    if (inputValue.length != 7) return alert("Not Thalla");
+
+    const isThalla = inputValue.length === 7;
+    const isNumericInputWithSum7 =
+      inputValue.length < 7 &&
+      /^\d+$/.test(inputValue) &&
+      inputValue
+        .split("")
+        .reduce((sum, digit) => sum + parseInt(digit, 10), 0) === 7;
+
+    if (!isThalla && !isNumericInputWithSum7) {
+      return alert("Invalid input");
+    }
 
     const encrypted = CryptoJS.AES.encrypt(
       inputValue,
-      "secret key 123"
+      import.meta.env.VITE_SECRET
     ).toString();
 
-    const link = `/${encrypted}`;
+    const link = `/${encodeURIComponent(encrypted)}`;
+
     setGeneratedLink(link);
     navigate(link);
   };
