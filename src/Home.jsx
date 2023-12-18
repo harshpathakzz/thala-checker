@@ -8,14 +8,17 @@ function Home() {
   const navigate = useNavigate();
 
   const handleSubmit = () => {
+    // Trim white spaces from input
+    const trimmedInput = inputValue.replace(/\s/g, "");
+    console.log(trimmedInput);
     // Encrypt using AES
-    if (inputValue.length === 0) return alert("Please enter your name");
+    if (trimmedInput.length === 0) return alert("Please enter valid input");
 
-    const isThalla = inputValue.length === 7;
+    const isThalla = trimmedInput.length === 7;
     const isNumericInputWithSum7 =
-      inputValue.length < 7 &&
-      /^\d+$/.test(inputValue) &&
-      inputValue
+      trimmedInput.length < 7 &&
+      /^\d+$/.test(trimmedInput) &&
+      trimmedInput
         .split("")
         .reduce((sum, digit) => sum + parseInt(digit, 10), 0) === 7;
 
@@ -24,7 +27,7 @@ function Home() {
     }
 
     const encrypted = CryptoJS.AES.encrypt(
-      inputValue,
+      trimmedInput,
       import.meta.env.VITE_SECRET
     ).toString();
 
