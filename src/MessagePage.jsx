@@ -49,14 +49,14 @@ const MessagePage = () => {
         <div className="max-w-md w-full p-8 bg-transparent rounded-md shadow-md text-center">
           {decryptedName && (
             <div style={{ whiteSpace: "nowrap" }}>
-              <span className="">
+              <span className="flex flex-wrap justify-center">
                 {decryptedName
                   .toUpperCase()
                   .split("")
                   .map((char, index) => (
                     <span
                       key={index}
-                      className="text-white font-bold text-3xl mx-1"
+                      className="text-white font-bold text-3xl mx-1 whitespace-nowrap md:whitespace-normal"
                     >
                       {char}
                       {index < decryptedName.length - 1 ? " + " : " = 7"}
@@ -66,7 +66,7 @@ const MessagePage = () => {
             </div>
           )}
 
-          <div className="mt-6 flex flex-row justify-evenly">
+          <div className="mt-6 flex flex-col items-center">
             <ShareButtons shareUrl={window.location.href} />
           </div>
 

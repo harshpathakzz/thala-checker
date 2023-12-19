@@ -1,6 +1,6 @@
 const Footer = () => {
   return (
-    <div className="fixed bottom-0 w-full bg-transparent text-white p-4 text-center z-30">
+    <div className="fixed bottom-0 w-full bg-transparent text-white p-4 text-center z-30 mt-1">
       Made with 💛 by{" "}
       <a
         className="underline"
